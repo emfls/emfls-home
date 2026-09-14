@@ -23,3 +23,12 @@
 - 360px·768px·1440px 기준 CSS 규칙을 확인했고 모바일 overflow를 유발하는 고정 폭 요소는 없었다.
 - 최종 production build에서 404 포함 16개 정적 페이지 생성을 확인했다.
 - 다음 단계는 Cloudflare Pages 배포와 커스텀 도메인 연결이다.
+
+### 2026-09-14 — Cloudflare Pages 연결
+
+- Cloudflare 계정에서 기존 `emfls-site`와 다른 독립 프로젝트 `emfls-home`을 생성했다.
+- GitHub `emfls/emfls-home`의 `main` 브랜치를 연결했다.
+- Build command는 `npm run build`, output directory는 `dist`, root directory는 저장소 루트로 설정했다.
+- 프로젝트 기본 주소는 `https://emfls-home.pages.dev`이다.
+- 기존 `emfls.com` 및 다른 서브도메인 설정은 변경하지 않았다.
+- GitHub 연결 직후 배포 목록은 비어 있어 main push로 첫 production 배포를 트리거한다.

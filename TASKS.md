@@ -15,7 +15,7 @@
 
 ## 다음 단계
 
-- [ ] P0: Cloudflare Pages 배포 및 `home.emfls.com` 커스텀 도메인 연결
+- [ ] P0: Cloudflare Pages 배포 및 `home.emfls.com` 커스텀 도메인 연결 (프로젝트 생성 완료, 배포·도메인 검증 중)
 - [ ] P1: 실제 초기 집관리 가이드 확충
 - [ ] P1: Home Troubleshooter와 내부 링크 강화
 - [ ] P2: Search Console·GA4 도입 검토
