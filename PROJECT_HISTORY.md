@@ -96,3 +96,16 @@
 - 라이브 홈페이지는 브라우저에서 정상 로드되었고 새 문제 바로가기와 12개 가이드 링크를 확인했다.
 - 로컬 production 산출물에서 GA4 스크립트 1회, measurement ID `G-3250GECR4K` 2회(스크립트 URL 및 설정), Search Console 인증 메타태그 1회를 확인했다.
 - GA4 데이터 스트림은 생성 직후라 `최근 48시간 동안 수신한 데이터가 없습니다` 상태였으며, 실제 실시간 수집 확인은 다음 작업으로 남겼다.
+
+### 2026-09-14 — 초기 색인 및 GA4 실제 수집 점검
+
+- Search Console 개요는 실적·색인 데이터 처리 중 상태였다.
+- URL 검사 결과 `https://home.emfls.com/` 홈은 `URL이 Google에 등록되어 있음`, `페이지 색인이 생성됨`으로 확인했다.
+- 대표 가이드 `https://home.emfls.com/guides/bathroom-fan-odor/`는 `Google에는 아직 알려지지 않은 URL` 상태였다.
+- 해당 가이드 1개만 색인 생성 요청했고, Google의 우선순위 크롤링 대기열에 정상 등록되었다. 전체 URL 일괄 요청은 하지 않았다.
+- 라이브 HTML 점검에서 최초 GA4 인라인 초기화 코드가 Astro 템플릿 문자열로 잘못 출력되는 문제를 발견했다.
+- `src/layouts/BaseLayout.astro`의 초기화 코드를 일반 inline JavaScript로 최소 수정했다. 수정 후 production HTML은 외부 GA 스크립트 1회와 `gtag('config', 'G-3250GECR4K')`를 정상 포함한다.
+- 수정 commit `8aa2245cad98090f34319da7e828be64e3c259f3`를 push했고 Cloudflare deployment `0b3701a6-3a26-4c81-ab25-8d1c4fca3edd`가 build/deploy 모두 성공했다.
+- 수정 후 실제 live 방문을 발생시켰지만 GA4 `emfls-home` 실시간 개요는 활성 사용자 0명·사용 가능한 데이터 없음으로 표시됐다. 따라서 GA4 실제 수집 성공으로 기록하지 않으며, 브라우저 확장 차단 여부와 Google 처리 지연을 다음 점검에서 다시 확인한다.
+- 라이브 직접 응답에서 canonical은 `https://home.emfls.com/`, sitemap은 25개 indexable URL, robots는 `Allow: /`로 확인했다.
+- 코드·콘텐츠·디자인·DNS 변경은 GA4 초기화 오류 수정 외에 하지 않았고, 다른 `emfls-*` 저장소도 수정하지 않았다.

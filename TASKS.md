@@ -18,6 +18,9 @@
 - [x] P0: 독립 GA4 속성과 `home.emfls.com` 웹 데이터 스트림 생성
 - [x] P0: production 전용 GA4 기본 태그와 Privacy 안내 반영
 - [x] P0: Search Console 소유권 확인 및 `sitemap.xml` 제출
+- [x] P0: production HTML에서 GA4 초기화 코드 오류 수정 및 재배포
+- [x] P1: 홈 URL 색인 상태 및 대표 가이드 URL 검사
+- [x] P1: 대표 가이드 1개 색인 생성 요청
 
 ## 다음 단계
 
