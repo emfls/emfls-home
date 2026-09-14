@@ -74,3 +74,15 @@
 - Git commit `a8554ae2117904780edce9b0656ef67b8860edf4`를 `main`에 push했다.
 - Cloudflare Pages production deployment `19e553de-7462-4a91-b62f-f342f34e696e`가 build/deploy 모두 성공했고 `home.emfls.com` alias를 확인했다.
 - 브라우저에서 `https://home.emfls.com/guides/bathroom-fan-odor/`를 열어 새 상세 구조와 내부 링크를 확인했다.
+
+### 2026-09-14 — Search Console·GA4 연결 준비
+
+- Google Search Console에서 `https://home.emfls.com/` URL 접두어 속성을 생성했다.
+- 소유권 확인은 DNS record를 변경하지 않는 HTML 메타태그 방식으로 선택했다.
+- Google이 발급한 인증값은 공통 `src/layouts/BaseLayout.astro`의 `<head>`에 추가했다. 민감한 secret은 아니지만, 동일 속성 재인증에 필요한 값이므로 코드에 유지한다.
+- 기존 GA4 계정 구조를 확인한 뒤 다른 사이트와 분리하기 위해 `emfls-home` 독립 속성을 생성했다.
+- 웹 데이터 스트림: `https://home.emfls.com`, stream ID `15773785181`, measurement ID `G-3250GECR4K`.
+- GA4는 공통 레이아웃에서 production build일 때만 Google tag를 한 번 로드하도록 구현했다. 새 analytics 라이브러리나 UI dependency는 추가하지 않았다.
+- Privacy 페이지에 GA4의 수집 목적과 범위, Google 개인정보처리방침 링크를 최소한으로 반영했다. AdSense는 여전히 사용하지 않는다.
+- 로컬 production build 성공 및 26개 정적 페이지 생성을 확인했다.
+- 다음 단계: 배포 후 Search Console 소유권 확인·sitemap 제출, 라이브 페이지의 GA 태그·canonical·robots·sitemap 확인, GA4 실시간 수집 확인.

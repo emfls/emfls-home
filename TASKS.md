@@ -14,11 +14,15 @@
 - [x] P0: 가이드 상세 템플릿에 사전 점검·FAQ·이어 읽기 구조 추가
 - [x] P1: 가이드 간 관련 링크와 카테고리 탐색 경로 강화
 - [x] P1: 확장된 정적 페이지의 build·sitemap·robots 검증
+- [x] P0: Google Search Console URL 접두어 속성 인증 메타태그 준비
+- [x] P0: 독립 GA4 속성과 `home.emfls.com` 웹 데이터 스트림 생성
+- [x] P0: production 전용 GA4 기본 태그와 Privacy 안내 반영
 
 ## 다음 단계
 
 - [ ] P1: 문제 상황별 Home Troubleshooter를 가이드 데이터 기반으로 설계
 - [ ] P1: Search Console 등록 및 실제 검색 유입 데이터 확인
-- [ ] P2: GA4 도입 검토
+- [ ] P1: Search Console sitemap 제출 및 초기 색인 상태 확인
+- [ ] P1: GA4 실시간 데이터 수집 확인
 - [ ] P2: 광고를 추가하지 않은 상태에서 AdSense 심사 요건 점검
 - [ ] P2: 실제 사용자 질문을 바탕으로 가이드 우선순위 재조정
