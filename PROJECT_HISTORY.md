@@ -86,3 +86,13 @@
 - Privacy 페이지에 GA4의 수집 목적과 범위, Google 개인정보처리방침 링크를 최소한으로 반영했다. AdSense는 여전히 사용하지 않는다.
 - 로컬 production build 성공 및 26개 정적 페이지 생성을 확인했다.
 - 다음 단계: 배포 후 Search Console 소유권 확인·sitemap 제출, 라이브 페이지의 GA 태그·canonical·robots·sitemap 확인, GA4 실시간 수집 확인.
+
+### 2026-09-14 — Search Console 인증 및 sitemap 제출 완료
+
+- Cloudflare Pages production deployment `bb2b942c-6a6e-43ad-947c-5342751fb361`가 build/deploy 모두 성공했고 `home.emfls.com` alias를 확인했다.
+- Search Console에서 URL 접두어 속성 `https://home.emfls.com/`의 HTML 태그 소유권 확인이 성공했다.
+- Search Console sitemap 제출 URL은 `/sitemap.xml`이며, 제출 결과는 `성공`, 발견된 페이지 25개, 동영상 0개로 표시되었다. 404 페이지는 sitemap 정책상 제외되어 정적 build 26페이지와 차이가 난다.
+- Search Console 개요는 새 속성 데이터 처리 중 상태이며, 검색 실적·색인 데이터는 며칠 후 확인해야 한다.
+- 라이브 홈페이지는 브라우저에서 정상 로드되었고 새 문제 바로가기와 12개 가이드 링크를 확인했다.
+- 로컬 production 산출물에서 GA4 스크립트 1회, measurement ID `G-3250GECR4K` 2회(스크립트 URL 및 설정), Search Console 인증 메타태그 1회를 확인했다.
+- GA4 데이터 스트림은 생성 직후라 `최근 48시간 동안 수신한 데이터가 없습니다` 상태였으며, 실제 실시간 수집 확인은 다음 작업으로 남겼다.
