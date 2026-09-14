@@ -64,3 +64,13 @@
 - 콘텐츠는 일상적인 주택 관리 범위로 제한하고, 전기·가스·누수·곰팡이 등 안전 관련 항목은 무리한 자가 수리를 권하지 않도록 작성했다.
 - 카테고리와 가이드 목록은 기존 `src/data` 기반 구조를 유지해 이후 가이드 추가 시 자동으로 카테고리 페이지와 sitemap에 반영되도록 했다.
 - 다음 단계는 build, 링크, SEO 파일, 모바일·데스크톱 화면을 검증한 뒤 GitHub와 Cloudflare Pages에 반영하는 것이다.
+
+### 2026-09-14 — 확충 콘텐츠 검증 및 production 반영
+
+- `npm run build` 성공: 총 26개 정적 페이지 생성.
+- 12개 가이드 URL이 `dist/sitemap.xml`에 포함되는 것을 확인했다.
+- 새 가이드 상세 페이지에서 사전 점검, FAQ, 이어 읽기 링크가 실제로 렌더링되는 것을 확인했다.
+- 홈페이지 문제 바로가기의 기존 의미 불일치 링크를 실제 관련 가이드 slug 기반으로 정리했다.
+- Git commit `a8554ae2117904780edce9b0656ef67b8860edf4`를 `main`에 push했다.
+- Cloudflare Pages production deployment `19e553de-7462-4a91-b62f-f342f34e696e`가 build/deploy 모두 성공했고 `home.emfls.com` alias를 확인했다.
+- 브라우저에서 `https://home.emfls.com/guides/bathroom-fan-odor/`를 열어 새 상세 구조와 내부 링크를 확인했다.
