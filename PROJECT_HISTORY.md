@@ -109,3 +109,18 @@
 - 수정 후 실제 live 방문을 발생시켰지만 GA4 `emfls-home` 실시간 개요는 활성 사용자 0명·사용 가능한 데이터 없음으로 표시됐다. 따라서 GA4 실제 수집 성공으로 기록하지 않으며, 브라우저 확장 차단 여부와 Google 처리 지연을 다음 점검에서 다시 확인한다.
 - 라이브 직접 응답에서 canonical은 `https://home.emfls.com/`, sitemap은 25개 indexable URL, robots는 `Allow: /`로 확인했다.
 - 코드·콘텐츠·디자인·DNS 변경은 GA4 초기화 오류 수정 외에 하지 않았고, 다른 `emfls-*` 저장소도 수정하지 않았다.
+
+### 2026-09-14 — 초기 Search Console·GA4 데이터 재점검
+
+- Git 상태는 `main`과 `origin/main`이 동기화되어 있었고 작업 트리는 깨끗했다.
+- Search Console sitemap `/sitemap.xml`은 계속 `성공`, 발견 페이지 25개, 동영상 0개로 표시됐다.
+- URL 검사 표본 결과:
+  - 홈 `/`: Google 등록 및 색인 완료.
+  - `guides/bathroom-fan-odor/`: Google 등록 및 색인 완료.
+  - `guides/boiler-water-too-hot/`: 아직 Google에 알려지지 않은 URL.
+  - `guides/window-condensation/`: 아직 Google에 알려지지 않은 URL.
+- 보일러·창문 결로 URL에는 반복적인 색인 요청을 하지 않았다. sitemap과 내부 링크를 통한 자연 크롤링을 우선한다.
+- Search Console 검색 실적은 최종 업데이트 시각은 표시됐지만 `데이터를 처리하는 중` 및 `데이터 없음` 상태였다. 클릭·노출·CTR·평균순위·query/page 데이터는 아직 분석하지 않는다.
+- GA4 `emfls-home` 실시간 개요는 라이브 방문 후에도 활성 사용자 0명, page view 등 사용 가능한 데이터 없음으로 표시됐다. production HTML 자체는 외부 스크립트 1회와 정상 `gtag` 초기화를 확인했으므로, 재수정 대신 처리 지연 또는 브라우저 환경 가능성을 남긴다.
+- GA4·Search Console 모두 데이터 부족 상태이며 제목, 설명, 콘텐츠, 내부 링크, DNS, Cloudflare 설정은 변경하지 않았다.
+- 다음 판단 기준은 Search Console에 실제 query/page 데이터가 쌓이고 GA4 실시간 또는 최근 데이터가 발생한 뒤 CTR·순위·페이지별 성과를 함께 비교하는 것이다.

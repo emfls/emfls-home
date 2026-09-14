@@ -21,11 +21,13 @@
 - [x] P0: production HTML에서 GA4 초기화 코드 오류 수정 및 재배포
 - [x] P1: 홈 URL 색인 상태 및 대표 가이드 URL 검사
 - [x] P1: 대표 가이드 1개 색인 생성 요청
+- [x] P1: Search Console 초기 색인·검색 실적 표본 점검
 
 ## 다음 단계
 
 - [ ] P1: 문제 상황별 Home Troubleshooter를 가이드 데이터 기반으로 설계
 - [ ] P1: Search Console 실제 검색 유입·초기 색인 데이터 확인
 - [ ] P1: GA4 실시간 데이터 수집 확인
+- [ ] P1: Search Console 데이터 수집 대기
 - [ ] P2: 광고를 추가하지 않은 상태에서 AdSense 심사 요건 점검
 - [ ] P2: 실제 사용자 질문을 바탕으로 가이드 우선순위 재조정
