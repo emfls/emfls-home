@@ -124,3 +124,13 @@
 - GA4 `emfls-home` 실시간 개요는 라이브 방문 후에도 활성 사용자 0명, page view 등 사용 가능한 데이터 없음으로 표시됐다. production HTML 자체는 외부 스크립트 1회와 정상 `gtag` 초기화를 확인했으므로, 재수정 대신 처리 지연 또는 브라우저 환경 가능성을 남긴다.
 - GA4·Search Console 모두 데이터 부족 상태이며 제목, 설명, 콘텐츠, 내부 링크, DNS, Cloudflare 설정은 변경하지 않았다.
 - 다음 판단 기준은 Search Console에 실제 query/page 데이터가 쌓이고 GA4 실시간 또는 최근 데이터가 발생한 뒤 CTR·순위·페이지별 성과를 함께 비교하는 것이다.
+
+### 2026-09-14 — GA4 실시간 수집 확인
+
+- Search Console sitemap은 계속 `성공`, 발견 페이지 25개, 동영상 0개로 유지됐다.
+- 기존 미등록 URL 재검사 결과 `guides/boiler-water-too-hot/`와 `guides/window-condensation/` 모두 아직 Google에 알려지지 않은 URL이었다. 기술적 오류나 canonical·robots 오류는 확인되지 않았으며, 반복 색인 요청은 하지 않았다.
+- Search Console 검색 실적은 최종 업데이트 시각은 갱신됐지만 여전히 `데이터를 처리하는 중` 및 `데이터 없음` 상태였다. 클릭·노출·CTR·평균순위·query/page 분석은 보류한다.
+- GA4 `emfls-home` 실시간 개요에서 활성 사용자 1명, 페이지 제목 `집관리 매뉴얼 | 집에서 바로 찾는 생활 관리 매뉴얼` 1건, 이벤트 `first_visit`·`page_view`·`session_start` 각 1건을 확인했다.
+- GA4 실제 production 수집이 확인되었으므로 코드·태그·Measurement ID는 추가 수정하지 않는다.
+- 이번 점검에서 콘텐츠, SEO 문구, 내부 링크, DNS, Cloudflare, 의존성은 변경하지 않았다.
+- 판단: GA4는 정상 수집, Search Console은 추가 데이터 수집 대기 상태다.
