@@ -134,3 +134,14 @@
 - GA4 실제 production 수집이 확인되었으므로 코드·태그·Measurement ID는 추가 수정하지 않는다.
 - 이번 점검에서 콘텐츠, SEO 문구, 내부 링크, DNS, Cloudflare, 의존성은 변경하지 않았다.
 - 판단: GA4는 정상 수집, Search Console은 추가 데이터 수집 대기 상태다.
+
+### 2026-09-14 — Search Console·GA4 재확인
+
+- Git 상태는 `main`과 `origin/main`이 동기화되어 있었고 작업 트리는 깨끗했다.
+- Search Console sitemap `/sitemap.xml`은 `성공`, 발견 페이지 25개, 동영상 0개로 이전 점검과 동일했다.
+- `guides/boiler-water-too-hot/`와 `guides/window-condensation/`는 다시 검사했지만 모두 `Google에 등록되어 있지 않음` 및 `Google에는 아직 알려지지 않은 URL` 상태였다.
+- 두 URL 모두 기술적 오류, robots 차단, canonical 오류가 확인되지 않아 색인 요청을 반복하지 않았다.
+- Search Console 검색 실적은 여전히 `데이터를 처리하는 중` 및 `데이터 없음` 상태였다. 클릭·노출·CTR·평균순위·query·page 기반 최적화 후보는 만들지 않았다.
+- GA4 실시간 개요는 활성 사용자 1명, 홈페이지 페이지 제목 3건, `page_view` 3건으로 실제 수집을 유지하고 있었다. 수집 오류나 중복 태그 증거는 없었다.
+- 이번 점검에서 코드, 콘텐츠, title, description, 내부 링크, Cloudflare, DNS, 의존성은 변경하지 않았다.
+- 판단: GA4는 정상 수집 중이며, Search Console은 추가 데이터 수집 대기 상태다.
