@@ -32,3 +32,16 @@
 - 프로젝트 기본 주소는 `https://emfls-home.pages.dev`이다.
 - 기존 `emfls.com` 및 다른 서브도메인 설정은 변경하지 않았다.
 - GitHub 연결 직후 배포 목록은 비어 있어 main push로 첫 production 배포를 트리거한다.
+
+### 2026-09-14 — Production 배포 완료
+
+- Cloudflare Pages production 배포 성공: `https://3d83e234.emfls-home.pages.dev`
+- `home.emfls.com` 커스텀 도메인을 Pages 프로젝트에 연결했다.
+- DNS CNAME `home.emfls.com → emfls-home.pages.dev`를 추가했다.
+- 인증서 검증을 위해 승인받은 범위에서 프록시를 일시적으로 DNS-only로 전환했고, HTTPS 검증 완료 후 프록시를 다시 활성화했다.
+- `https://home.emfls.com/`에서 홈페이지 200 응답과 실제 콘텐츠를 확인했다.
+- About 페이지와 존재하지 않는 경로의 custom 404를 production에서 확인했다.
+- 배포 산출물에 404, 카테고리, 가이드, About, Privacy, Contact, robots.txt, sitemap.xml이 포함된 것을 확인했다.
+- production canonical/내부 링크는 `home.emfls.com` 기준으로 생성된다.
+- Git commit `d12b2a0e545a4751022f88c691e3f571afb38a66`을 `main`에 push했다.
+- 다음 단계: 핵심 카테고리별 실제 집관리 가이드 확충.
