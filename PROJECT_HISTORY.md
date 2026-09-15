@@ -176,3 +176,10 @@
 
 - 기존 `naver6dde13e69fe8ec25cd17e085c65c2124.html`을 제거하고 새 `naverf4203719e5de99ea87ed7d6465fa73d6.html`을 `public/`에 추가했다.
 - 새 파일명과 네이버가 제공한 인증 내용을 그대로 유지한다.
+
+### 2026-09-15 — 브라우저 시각 QA 및 매뉴얼 본문 polishing
+
+- production과 로컬 production preview에서 홈, 욕실 category, 보일러 guide를 실제 브라우저로 렌더링해 확인했다. 홈 hero, category guide rows, guide meta·warning·sidebar의 기존 종이 문서 정체성은 유지했다.
+- 강제 개행으로 인한 hero 제목 균형 문제를 검토하고, 가이드 본문에는 사전 점검 체크 표시, 준비물 태그, 금지사항 warning 영역, 전문가 판단 teal rule, 예방 checklist, FAQ·이어 읽기 구분선을 추가했다.
+- 모바일 기준 CSS에서 guide meta를 세로 stack하고 본문 위계를 유지하도록 보완했다. JavaScript·의존성·이미지는 추가하지 않았다.
+- `npm run build` 성공, Astro static 27개 페이지 생성. 대표 표본 렌더링 후 `git diff --check` 통과.

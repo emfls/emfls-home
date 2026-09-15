@@ -30,6 +30,7 @@
 - [x] P1: Home 전용 OG 이미지와 Editorial Policy 추가
 - [x] P1: GA4 custom production domain 전용 실행 조건 반영
 - [x] P1: Home 콘텐츠·launch·repository 연결 운영 문서 추가
+- [x] P1: 전체 페이지 대표 표본 브라우저 시각 QA 및 가이드 본문 위계 polishing
 - [ ] P2: Cloudflare 중복 Worker의 custom domain·route 연결 여부 수동 확인 후 정리
 - [ ] P1: Search Console 실제 검색 유입·초기 색인 데이터 확인
 - [ ] P2: AdSense 승인 및 Privacy 정책 검토 후 loader 적용 여부 결정
