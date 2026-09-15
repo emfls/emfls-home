@@ -166,3 +166,8 @@
 - production live QA 결과: 홈, About, Contact, Privacy, Editorial Policy, 대표 보일러 가이드, robots.txt, sitemap.xml은 200; 존재하지 않는 경로는 404였다. sitemap은 26개 canonical URL을 반환했다.
 - production homepage에서 canonical `https://home.emfls.com/`, Home OG 이미지, Twitter 카드, Measurement ID를 확인했다. GA script는 custom hostname 조건을 포함한다.
 - 이번 Baseline 작업의 최종 판단: 구현·배포·live QA 완료. Search Console 검색 데이터 대기와 AdSense 결정, 중복 Worker 수동 확인은 별도 운영 대기 사항이다.
+
+### 2026-09-15 — 네이버 소유확인 파일을 Astro public 디렉터리로 이동
+
+- 네이버 소유확인 파일의 원본 내용은 변경하지 않고 `public/naver6dde13e69fe8ec25cd17e085c65c2124.html`로 이동했다.
+- repo root의 중복 파일은 제거했다. `npm run build` 후 `dist/naver6dde13e69fe8ec25cd17e085c65c2124.html` 생성을 확인한다.
