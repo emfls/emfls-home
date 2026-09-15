@@ -171,3 +171,8 @@
 
 - 네이버 소유확인 파일의 원본 내용은 변경하지 않고 `public/naver6dde13e69fe8ec25cd17e085c65c2124.html`로 이동했다.
 - repo root의 중복 파일은 제거했다. `npm run build` 후 `dist/naver6dde13e69fe8ec25cd17e085c65c2124.html` 생성을 확인한다.
+
+### 2026-09-15 — 네이버 소유확인 파일 교체
+
+- 기존 `naver6dde13e69fe8ec25cd17e085c65c2124.html`을 제거하고 새 `naverf4203719e5de99ea87ed7d6465fa73d6.html`을 `public/`에 추가했다.
+- 새 파일명과 네이버가 제공한 인증 내용을 그대로 유지한다.
