@@ -145,3 +145,19 @@
 - GA4 실시간 개요는 활성 사용자 1명, 홈페이지 페이지 제목 3건, `page_view` 3건으로 실제 수집을 유지하고 있었다. 수집 오류나 중복 태그 증거는 없었다.
 - 이번 점검에서 코드, 콘텐츠, title, description, 내부 링크, Cloudflare, DNS, 의존성은 변경하지 않았다.
 - 판단: GA4는 정상 수집 중이며, Search Console은 추가 데이터 수집 대기 상태다.
+
+### 2026-09-15 — EMFLS Network Baseline v1 적용
+
+- 기존 `emfls-home` 디자인과 콘텐츠를 유지하면서 운영·SEO·Trust·Repo 문서 기준만 정리했다.
+- `astro.config.mjs`에 `trailingSlash: 'always'`를 명시하고 홈, category, guide, 정책·안내 페이지 내부 링크와 sitemap URL을 trailing slash 규격으로 통일했다.
+- sitemap은 단일 `/sitemap.xml`을 유지하며 홈, About, Privacy, Contact, Editorial Policy, category, guide의 canonical URL만 포함하도록 보완했다. 404는 `noindex`이며 sitemap에서 제외된다.
+- 공통 SEO head에 canonical, robots 조건, Open Graph, Twitter 카드, theme-color, favicon, Home 전용 `public/og-home.svg`를 확인·보완했다.
+- 홈은 WebSite JSON-LD를 유지하고 가이드에는 Article과 BreadcrumbList JSON-LD를 추가했다. 리뷰·평점·가격 등 허위 schema는 추가하지 않았다.
+- GA4 Measurement ID `G-3250GECR4K`는 유지하며 `home.emfls.com` hostname에서만 실행되도록 제한했다. localhost, pages.dev, workers.dev, preview에서는 실행되지 않는다.
+- 기존 문서의 AdSense 미사용 정책을 존중해 loader는 추가하지 않고, 승인·Privacy 검토 후 결정할 보류 사항으로 기록했다.
+- Home 전용 Editorial Policy 페이지를 추가하고 Footer·sitemap에 연결했다. CONTENT_POLICY.md, LAUNCH_CHECKLIST.md, REPOSITORY_CONNECTION.md를 추가했다.
+- 초기 연결 기록은 `CONNECTION.md`에 보존하고 최신 운영 상태는 `REPOSITORY_CONNECTION.md`로 분리했다.
+- Cloudflare Pages 및 중복 Worker는 확인 후 영향 범위가 불명확하면 삭제하지 않는다. Worker custom domain·route 수동 확인이 남아 있다.
+- Cloudflare API 확인 결과 Pages 프로젝트 `emfls-home`은 GitHub `emfls/emfls-home`의 `main`에 연결되어 있고 custom domain `home.emfls.com`을 사용한다. 계정의 Workers scripts/domains 목록에는 별도 Worker와 Worker domain이 없어 삭제 작업은 하지 않았다.
+- 로컬 build 성공: Astro static `27 page(s) built`; Editorial Policy 1개 증가가 예상과 일치한다. 산출물에서 sitemap 26개 URL, 가이드 12개 Article·BreadcrumbList, 다른 프로젝트 도메인 문자열 없음, AdSense 코드 없음, pages.dev/workers.dev canonical 없음, GA 실행 조건은 custom hostname 조건으로 확인했다.
+- production 반영 전 최종 작업: Git diff·push 후 Cloudflare Pages 새 deployment와 `home.emfls.com` live QA를 확인한다.

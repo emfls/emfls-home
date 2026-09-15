@@ -26,8 +26,13 @@
 
 ## 다음 단계
 
-- [ ] P1: 문제 상황별 Home Troubleshooter를 가이드 데이터 기반으로 설계
+- [x] P1: EMFLS Network Baseline v1 — trailing slash·sitemap·canonical·SEO head·schema 정리
+- [x] P1: Home 전용 OG 이미지와 Editorial Policy 추가
+- [x] P1: GA4 custom production domain 전용 실행 조건 반영
+- [x] P1: Home 콘텐츠·launch·repository 연결 운영 문서 추가
+- [ ] P2: Cloudflare 중복 Worker의 custom domain·route 연결 여부 수동 확인 후 정리
 - [ ] P1: Search Console 실제 검색 유입·초기 색인 데이터 확인
-- [ ] P1: Search Console 데이터 수집 대기
-- [ ] P2: 광고를 추가하지 않은 상태에서 AdSense 심사 요건 점검
+- [ ] P2: AdSense 승인 및 Privacy 정책 검토 후 loader 적용 여부 결정
+
+- [ ] P1: 문제 상황별 Home Troubleshooter를 가이드 데이터 기반으로 설계
 - [ ] P2: 실제 사용자 질문을 바탕으로 가이드 우선순위 재조정
