@@ -161,3 +161,8 @@
 - Cloudflare API 확인 결과 Pages 프로젝트 `emfls-home`은 GitHub `emfls/emfls-home`의 `main`에 연결되어 있고 custom domain `home.emfls.com`을 사용한다. 계정의 Workers scripts/domains 목록에는 별도 Worker와 Worker domain이 없어 삭제 작업은 하지 않았다.
 - 로컬 build 성공: Astro static `27 page(s) built`; Editorial Policy 1개 증가가 예상과 일치한다. 산출물에서 sitemap 26개 URL, 가이드 12개 Article·BreadcrumbList, 다른 프로젝트 도메인 문자열 없음, AdSense 코드 없음, pages.dev/workers.dev canonical 없음, GA 실행 조건은 custom hostname 조건으로 확인했다.
 - production 반영 전 최종 작업: Git diff·push 후 Cloudflare Pages 새 deployment와 `home.emfls.com` live QA를 확인한다.
+- Git commit `1a506dd9cdb5cd411c62c68f74be481d1f0195ce` (`chore: align home site with network baseline`)를 `main`에 push했다.
+- Cloudflare Pages deployment `609e4456-2631-4837-a9a7-c80fd84eca4a`는 build/deploy 모두 성공했고 `home.emfls.com` alias를 확인했다.
+- production live QA 결과: 홈, About, Contact, Privacy, Editorial Policy, 대표 보일러 가이드, robots.txt, sitemap.xml은 200; 존재하지 않는 경로는 404였다. sitemap은 26개 canonical URL을 반환했다.
+- production homepage에서 canonical `https://home.emfls.com/`, Home OG 이미지, Twitter 카드, Measurement ID를 확인했다. GA script는 custom hostname 조건을 포함한다.
+- 이번 Baseline 작업의 최종 판단: 구현·배포·live QA 완료. Search Console 검색 데이터 대기와 AdSense 결정, 중복 Worker 수동 확인은 별도 운영 대기 사항이다.
