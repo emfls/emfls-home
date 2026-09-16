@@ -198,3 +198,11 @@
 - Cloudflare Pages의 정적 `.html` clean-URL redirect를 피하기 위해 Naver 인증 경로를 `functions/naverf4203719e5de99ea87ed7d6465fa73d6.html.ts` Pages Function으로 제공한다.
 - `npm run check` PASS (0 errors, 기존 warning/hint만 존재), `npm run build` PASS (27 pages), `git diff --check` PASS.
 - 정확한 Production `.html` endpoint는 새 배포 후 HTTP 200 및 redirect 없음으로 재확인한다. 외부 Search Console/Naver/Daum/IndexNow 상태는 실제 확인 전까지 추정하지 않는다.
+
+### 2026-09-16 — Home review fix 결과
+
+- `npm run check`와 `npm run build`는 모두 통과했다.
+- `origin/main`에 commit `122de76`을 push했다.
+- Production 재확인 결과 Naver 인증 본문은 정상 노출되지만 Cloudflare Pages가 정확한 `.html` 요청을 확장자 없는 경로로 정규화한다. 따라서 요구된 redirect 없음 조건은 충족되지 않았다.
+- Pages 기본 clean-URL 동작을 우회하려면 별도 Cloudflare Worker/라우팅 설정 또는 관리자 권한이 필요하다. 이번 Repo 범위에서 외부 인프라를 추정해 변경하지 않는다.
+- 작업 판단: BLOCKED (Production routing dependency). 외부 Search 등록 상태는 변경·완료로 기록하지 않는다.
