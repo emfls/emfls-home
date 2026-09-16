@@ -183,3 +183,11 @@
 - 강제 개행으로 인한 hero 제목 균형 문제를 검토하고, 가이드 본문에는 사전 점검 체크 표시, 준비물 태그, 금지사항 warning 영역, 전문가 판단 teal rule, 예방 checklist, FAQ·이어 읽기 구분선을 추가했다.
 - 모바일 기준 CSS에서 guide meta를 세로 stack하고 본문 위계를 유지하도록 보완했다. JavaScript·의존성·이미지는 추가하지 않았다.
 - `npm run build` 성공, Astro static 27개 페이지 생성. 대표 표본 렌더링 후 `git diff --check` 통과.
+
+### 2026-09-16 — Search Launch Naver 소유확인 엔드포인트 drift 수정
+
+- Home Search Launch 정규화 범위에서 네이버 소유확인 URL이 trailing-slash 규칙에 의해 redirect되던 문제를 수정했다.
+- 기존 `public/naverf4203719e5de99ea87ed7d6465fa73d6.html`을 제거하고 동일 경로를 Astro API route로 제공해 정확한 `.html` URL과 인증 본문을 유지한다.
+- `npm run build`는 성공했으며, `dist/naverf4203719e5de99ea87ed7d6465fa73d6.html` 생성과 `git diff --check`를 확인했다.
+- `npm run check`는 기존 `src/pages/guides/[slug].astro`의 `item is possibly undefined` 2건으로 실패했다. 이번 문서·검증 엔드포인트 범위 밖의 기존 오류이며 기능 코드는 수정하지 않았다.
+- production endpoint의 최종 200 및 Naver/Search Console 외부 소유확인은 push 후 Cloudflare 배포와 외부 계정 권한 확인이 필요하다.
