@@ -191,3 +191,10 @@
 - `npm run build`는 성공했으며, `dist/naverf4203719e5de99ea87ed7d6465fa73d6.html` 생성과 `git diff --check`를 확인했다.
 - `npm run check`는 기존 `src/pages/guides/[slug].astro`의 `item is possibly undefined` 2건으로 실패했다. 이번 문서·검증 엔드포인트 범위 밖의 기존 오류이며 기능 코드는 수정하지 않았다.
 - production endpoint의 최종 200 및 Naver/Search Console 외부 소유확인은 push 후 Cloudflare 배포와 외부 계정 권한 확인이 필요하다.
+
+### 2026-09-16 — Home review fix
+
+- `src/pages/guides/[slug].astro`의 related guide 배열에 명시적 type guard를 적용해 `item is possibly undefined` 2건을 수정했다.
+- Cloudflare Pages의 정적 `.html` clean-URL redirect를 피하기 위해 Naver 인증 경로를 `functions/naverf4203719e5de99ea87ed7d6465fa73d6.html.ts` Pages Function으로 제공한다.
+- `npm run check` PASS (0 errors, 기존 warning/hint만 존재), `npm run build` PASS (27 pages), `git diff --check` PASS.
+- 정확한 Production `.html` endpoint는 새 배포 후 HTTP 200 및 redirect 없음으로 재확인한다. 외부 Search Console/Naver/Daum/IndexNow 상태는 실제 확인 전까지 추정하지 않는다.
